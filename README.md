@@ -165,12 +165,12 @@ Take a look at [react-native-animatable](https://github.com/oblador/react-native
   <tr>
     <th>&nbsp;</th>
     <th>
-      <h3><a href="https://github.com/rayandrews/react-native-web-modal/packages/modal-react-native-web">React Native Web Modal</a></h3>
+      <h3><a href="https://github.com/rayandrews/react-native-web-modal/tree/master/packages/modal-react-native-web">React Native Web Modal</a></h3>
       NPM : <a href="https://npm.im/modal-react-native-web">modal-react-native-web</a>
       <br />
     </th>
     <th>
-      <h3><a href="https://github.com/rayandrews/react-native-web-modal/packages/modal-enhanced-react-native-web">Enhanced Modal React Native Web</a></h3>
+      <h3><a href="https://github.com/rayandrews/react-native-web-modal/tree/master/packages/modal-enhanced-react-native-web">Enhanced Modal React Native Web</a></h3>
       NPM : <a href="https://npm.im/modal-enhanced-react-native-web">modal-enhanced-react-native-web</a>
       <br />
     </th>
