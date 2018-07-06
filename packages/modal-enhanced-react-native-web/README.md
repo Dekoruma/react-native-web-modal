@@ -1,13 +1,13 @@
 <h1 align="center">
   <br>
-  React Native Web Modal
+  Enhanced Modal React Native Web
   <br>
   <br>
 </h1>
 
 <p align="center">
   <br />
-  This repository contains NPM Packages for React Native Modal Implementation for Web
+  This repository contains NPM Packages for Enhanced Modal for React Native Web
   <br />
   <br />
   RNW version : <b>^0.8.6</b>
@@ -17,77 +17,17 @@
 
 ## Inspiration
 
-[React Native Modal](https://facebook.github.io/react-native/docs/modal.html) is not yet implemented in [React Native Web](https://github.com/necolas/react-native-web). This is just replacement of React Native Modal with the same API, behavior, and design. If you want to create a more enhanced modal, use React Native Web Modal Enhanced with the same code as [React Native Modal](https://github.com/react-native-community/react-native-modal) implementation by React Native Community.
+Enhanced modal with the same code as [React Native Modal](https://github.com/react-native-community/react-native-modal) implementation by React Native Community.
 
 ---
 
 ## Setup
 
-This libraries is available on npm, install it with: `npm install --save modal-react-native-web` or `yarn add modal-react-native-web` for the basic modal.
-
 If you want to use the enhanced version, install it with `npm install --save modal-enhanced-react-native-web` or `yarn add modal-enhanced-react-native-web`.
 
 ## Usage
 
-1. React Native Web Modal
-
-Since r-web-modal is an implemantion of the original react native modal, it works in a similar fashion with [react-native modal](https://facebook.github.io/react-native/docs/modal.html). But of course, some APIs are limited (not all props are suppported).
-
-```javascript
-
-import React, { Component } from 'react';
-import { Text, TouchableHighlight, View } from 'react-native';
-
-import Modal from 'modal-react-native-web';
-
-export default class Example extends Component {
-  state = {
-    modalVisible: false,
-  };
-
-  setModalVisible(visible) {
-    this.setState({modalVisible: visible});
-  }
-
-  render() {
-    return (
-      <View style={{marginTop: 22}}>
-        <Modal
-          animationType="slide"
-          transparent={false}
-          visible={this.state.modalVisible}
-          onDismiss={() => {
-            alert('Modal has been closed.');
-          }}>
-          <View style={{marginTop: 22}}>
-            <View>
-              <Text>Hello World!</Text>
-
-              <TouchableHighlight
-                onPress={() => {
-                  this.setModalVisible(!this.state.modalVisible);
-                }}>
-                <Text>Hide Modal</Text>
-              </TouchableHighlight>
-            </View>
-          </View>
-        </Modal>
-
-        <TouchableHighlight
-          onPress={() => {
-            this.setModalVisible(true);
-          }}>
-          <Text>Show Modal</Text>
-        </TouchableHighlight>
-      </View>
-    );
-  }
-}
-```
-
-_Taken from [React Native Modal Example](https://facebook.github.io/react-native/docs/modal.html) with some changes_
-
-2. Modal Enhanced for React Native Web
+Here's example code :
 
 ```javascript
 import React, { Component } from "react";

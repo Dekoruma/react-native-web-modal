@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, TouchableOpacity, View, ScrollView } from 'react-native';
 
-import Modal from 'rn-web-modal-enhanced';
+import Modal from 'modal-enhanced-react-native-web';
 
 import styles from './styles';
 

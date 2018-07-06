@@ -1,5 +1,5 @@
 {
-  "name": "rn-web-modal",
+  "name": "modal-react-native-web",
   "version": "0.1.0",
   "description": "React native modal implementation for web",
   "main": "dist/index.js",

@@ -21,7 +21,7 @@ import {
   registerAnimation,
   createAnimation,
 } from 'react-native-animatable';
-import Modal from 'rn-web-modal';
+import Modal from 'modal-react-native-web';
 
 import * as ANIMATION_DEFINITIONS from './animations';
 

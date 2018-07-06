@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, TouchableHighlight, View } from 'react-native';
 
-import Modal from 'rn-web-modal';
+import Modal from 'modal-react-native-web';
 
 export default class ModalExample extends Component {
   state = {

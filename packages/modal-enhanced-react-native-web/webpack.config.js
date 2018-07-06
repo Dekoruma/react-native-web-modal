@@ -1,6 +1,6 @@
 const path = require('path');
 
-const libraryName = 'rn-web-modal-enhanced';
+const libraryName = 'modal-animated-react-native-web';
 
 const config = {
   context: __dirname,
