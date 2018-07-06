@@ -1,6 +1,6 @@
 {
   "name": "rn-web-modal-enhanced",
-  "version": "0.0.2-0",
+  "version": "0.1.0",
   "description": "React native modal enhanced for web",
   "main": "dist/index.js",
   "repository": "https://github.com/rayandrews/react-native-web-modal",
@@ -30,7 +30,7 @@
     "react-art": "^16.4.1",
     "react-native-animatable": "^1.3.0",
     "react-native-web": "^0.8.6",
-    "rn-web-modal": "^0.0.2-0"
+    "rn-web-modal": "^0.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
