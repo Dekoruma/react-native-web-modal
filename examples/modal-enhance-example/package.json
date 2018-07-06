@@ -1,13 +1,13 @@
 {
   "name": "modal-enhance-example",
-  "version": "0.1.0",
+  "version": "0.0.2-0",
   "private": true,
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-native-web": "^0.8.6",
     "react-scripts": "1.1.4",
-    "rn-web-modal-enhanced": "^0.1.0"
+    "rn-web-modal-enhanced": "^0.0.2-0"
   },
   "scripts": {
     "start": "react-scripts start",
