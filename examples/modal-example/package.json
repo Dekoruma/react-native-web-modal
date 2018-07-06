@@ -1,13 +1,13 @@
 {
   "name": "modal-example",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
+    "modal-react-native-web": "^0.1.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-native-web": "^0.8.6",
-    "react-scripts": "1.1.4",
-    "modal-react-native-web": "^0.1.0"
+    "react-scripts": "1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,6 +1,6 @@
 {
   "name": "modal-react-native-web",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React native modal implementation for web",
   "main": "dist/index.js",
   "repository": "https://github.com/rayandrews/react-native-web-modal",
