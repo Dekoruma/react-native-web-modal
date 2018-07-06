@@ -20,6 +20,11 @@
     "lint": "prettier-eslint --write \"packages/**/*.js\"",
     "precommit": "lint-staged"
   },
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-art": "^16.4.1",
+    "react-native-web": "^0.8.6"
+  },
   "devDependencies": {
     "lerna": "^2.11.0",
     "eslint": "^5.0.1",
@@ -54,9 +59,15 @@
     ]
   },
   "lint-staged": {
-    "**/*.js": [
-      "yarn lint",
-      "git add"
+    "linters": {
+      "**/*.js": [
+        "prettier-eslint --write",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "**/dist/*.js",
+      "**/node_modules/**"
     ]
   }
 }
