@@ -12,6 +12,17 @@
     "build:watch": "yarn build -w",
     "clean": "rimraf dist"
   },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "react",
+    "react-native",
+    "react-native-web",
+    "modal",
+    "animation",
+    "react-native-animatable"
+  ],
   "dependencies": {
     "babel-runtime": "^6.26.0",
     "prop-types": "^15.6.2",
