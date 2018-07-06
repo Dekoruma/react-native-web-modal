@@ -1,8 +1,9 @@
 {
   "name": "modal-react-native-web",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React native modal implementation for web",
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/index.js",
   "repository": "https://github.com/rayandrews/react-native-web-modal",
   "author": "Ray Andrew <raydreww@gmail.com>",
   "license": "MIT",
@@ -19,14 +20,19 @@
     "react-native-animatable"
   ],
   "scripts": {
-    "build": "BABEL_ENV=production babel src -d dist --source-maps --copy-files",
+    "build": "yarn clean && yarn build:es5 && yarn build:commonjs",
+    "build:es5": "BABEL_ENV=production babel src -d dist --ignore \"**/__tests__\"",
+    "build:commonjs": "BABEL_ENV=commonjs babel src -d dist/cjs --ignore \"**/__tests__\"",
     "build:watch": "yarn build -w",
     "clean": "rimraf dist"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-add-module-exports": "next",
     "babel-plugin-module-resolver": "^3.1.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-minify": "^0.4.3",

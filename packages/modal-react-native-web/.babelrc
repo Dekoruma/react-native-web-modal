@@ -7,10 +7,24 @@
     "minify"
   ],
   "plugins": [
-    "transform-runtime", ["module-resolver", {
+    ["babel-plugin-transform-class-properties", {
+      "loose": true
+    }],
+    ["babel-plugin-transform-object-rest-spread", {
+      "useBuiltIns": true
+    }],
+    ["babel-plugin-transform-react-remove-prop-types", {
+      "mode": "wrap"
+    }],
+    ["module-resolver", {
       "alias": {
         "react-native": ["react-native-web"]
       }
     }]
-  ]
+  ],
+  "env": {
+    "commonjs": {
+      "plugins": ["add-module-exports"]
+    }
+  }
 }

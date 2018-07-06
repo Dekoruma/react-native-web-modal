@@ -1,6 +1,6 @@
 const path = require('path');
 
-const libraryName = 'modal-animated-react-native-web';
+const libraryName = 'modal-enhanced-react-native-web';
 
 const config = {
   context: __dirname,
@@ -14,8 +14,6 @@ const config = {
           path.resolve('./src'),
           path.resolve('./node_modules/react-native-animatable'),
         ],
-        // include: [path.resolve('./src'), /node_modules\/react-native-/],
-        // react-native-web is already compiled.
         exclude: /node_modules\/react-native-web\//,
         use: {
           loader: 'babel-loader',
@@ -31,13 +29,12 @@ const config = {
     extensions: ['.js', '.jsx'],
   },
   output: {
-    path: `${__dirname}/dist`,
+    path: `${__dirname}/dist/cjs`,
     filename: 'index.js',
     library: libraryName,
-    libraryTarget: 'umd',
-    umdNamedDefine: true,
+    libraryTarget: 'commonjs2',
   },
-  devtool: 'source-map',
+  devtool: 'none',
   externals: {
     react: {
       root: 'React',

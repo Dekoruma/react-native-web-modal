@@ -37,7 +37,7 @@ const makeAnimation = (name, obj) => {
 
 const isObject = (obj) => obj !== null && typeof obj === 'object';
 
-export default class ReactNativeModal extends Component {
+class ReactNativeModal extends Component {
   static propTypes = {
     animationIn: PropTypes.oneOfType([PropTypes.string, PropTypes.shape]),
     animationInTiming: PropTypes.number,
@@ -483,3 +483,6 @@ export default class ReactNativeModal extends Component {
     );
   }
 }
+
+export { ReactNativeModal };
+export default ReactNativeModal;

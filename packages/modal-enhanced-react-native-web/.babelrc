@@ -6,10 +6,24 @@
     "react-native"
   ],
   "plugins": [
+    ["babel-plugin-transform-class-properties", {
+      "loose": true
+    }],
+    ["transform-object-rest-spread", {
+      "useBuiltIns": true
+    }],
+    ["transform-react-remove-prop-types", {
+      "mode": "wrap"
+    }],
     ["module-resolver", {
       "alias": {
         "react-native": ["react-native-web"]
       }
     }]
-  ]
+  ],
+  "env": {
+    "commonjs": {
+      "plugins": ["add-module-exports"]
+    }
+  }
 }
