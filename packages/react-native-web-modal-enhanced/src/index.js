@@ -37,7 +37,7 @@ const makeAnimation = (name, obj) => {
 
 const isObject = (obj) => obj !== null && typeof obj === 'object';
 
-export class ReactNativeModal extends Component {
+export default class ReactNativeModal extends Component {
   static propTypes = {
     animationIn: PropTypes.oneOfType([PropTypes.string, PropTypes.shape]),
     animationInTiming: PropTypes.number,
@@ -426,10 +426,10 @@ export class ReactNativeModal extends Component {
       this.props.hideModalContentWhileAnimating &&
       this.props.useNativeDriver &&
       !this.state.showContent ? (
-          <View />
-        ) : (
-          children
-        );
+        <View />
+      ) : (
+        children
+      );
     const containerView = (
       <View
         {...panHandlers}
@@ -483,5 +483,3 @@ export class ReactNativeModal extends Component {
     );
   }
 }
-
-export default ReactNativeModal;

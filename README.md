@@ -215,6 +215,11 @@ Take a look at [react-native-animatable](https://github.com/oblador/react-native
 
 * **Ray Andrew** - [Ray Andrew](https://github.com/rayandrews)
 
+## Special Thanks
+
+* **Natan Elia** - [Natan Elia](https://github.com/natanelia)
+* **Louis David** [Louis David](https://github.com/louvidc)
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

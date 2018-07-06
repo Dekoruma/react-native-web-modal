@@ -10,13 +10,15 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "clean:allnode": "yarn clean:all && rimraf node_modules",
-    "clean:all": "concurrently \"yarn clean:modal\" \"yarn clean:modal-enhanced\" && lerna clean",
+    "clean:all": "yarn clean:build && lerna clean",
+    "clean:build": "concurrently \"yarn clean:modal\" \"yarn clean:modal-enhanced\"",
     "build:all": "yarn build:modal && yarn build:modal-enhanced",
     "build:modal": "lerna run --stream --scope=rn-web-modal build",
     "clean:modal": "lerna run --stream --scope=rn-web-modal clean",
     "build:modal-enhanced": "lerna run --stream --scope=rn-web-modal-enhanced build",
     "clean:modal-enhanced": "lerna run --stream --scope=rn-web-modal-enhanced clean",
-    "lint": "prettier-eslint --write \"packages/**/*.js\""
+    "lint": "prettier-eslint --write \"packages/**/*.js\"",
+    "precommit": "lint-staged"
   },
   "devDependencies": {
     "lerna": "^2.11.0",
@@ -43,7 +45,12 @@
   },
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/*",
+      "examples/*"
+    ],
+    "nohoist": [
+      "**/react-native-animatable",
+      "**/react-native-animatable/**"
     ]
   },
   "lint-staged": {

@@ -3,11 +3,10 @@
     "env",
     "stage-0",
     "react",
-    "react-native",
-    "minify"
+    "react-native"
   ],
   "plugins": [
-    "transform-runtime", ["module-resolver", {
+    ["module-resolver", {
       "alias": {
         "react-native": ["react-native-web"]
       }
