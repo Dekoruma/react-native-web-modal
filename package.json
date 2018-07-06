@@ -1,0 +1,55 @@
+{
+  "version": "0.1.0",
+  "description": "React native modal for web",
+  "repository": "https://github.com/rayandrews/react-native-web-modal",
+  "homepage": "https://github.com/rayandrews/react-native-web-modal#readme",
+  "bugs": "https://github.com/rayandrews/react-native-web-modal/issues",
+  "author": "Ray Andrew <raydreww@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "clean:allnode": "yarn clean:all && rimraf node_modules",
+    "clean:all": "concurrently \"yarn clean:modal\" \"yarn clean:modal-enhanced\" && lerna clean",
+    "build:all": "yarn build:modal && yarn build:modal-enhanced",
+    "build:modal": "lerna run --stream --scope=rn-web-modal build",
+    "clean:modal": "lerna run --stream --scope=rn-web-modal clean",
+    "build:modal-enhanced": "lerna run --stream --scope=rn-web-modal-enhanced build",
+    "clean:modal-enhanced": "lerna run --stream --scope=rn-web-modal-enhanced clean",
+    "lint": "prettier-eslint --write \"packages/**/*.js\""
+  },
+  "devDependencies": {
+    "lerna": "^2.11.0",
+    "eslint": "^5.0.1",
+    "husky": "^0.14.3",
+    "jest": "^23.3.0",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.7",
+    "rimraf": "^2.6.2",
+    "concurrently": "^3.5.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-plugin-flowtype": "^2.49.3",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.1",
+    "eslint-plugin-react": "^7.10.0",
+    "onchange": "^4.0.0",
+    "prettier-eslint": "^8.8.2",
+    "prettier-eslint-cli": "^4.7.1",
+    "babel-eslint": "^8.2.5"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "lint-staged": {
+    "{,!(node_modules)/}**/*.{js,jsx}": [
+      "yarn lint",
+      "git add"
+    ]
+  }
+}

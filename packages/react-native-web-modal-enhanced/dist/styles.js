@@ -1,0 +1,2 @@
+'use strict';Object.defineProperty(exports,'__esModule',{value:!0});var _reactNativeWeb=require('react-native-web');exports.default=_reactNativeWeb.StyleSheet.create({backdrop:{position:'absolute',top:0,bottom:0,left:0,right:0,opacity:0,backgroundColor:'black'},content:{flex:1,justifyContent:'center'}});
+//# sourceMappingURL=styles.js.map
