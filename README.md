@@ -9,8 +9,6 @@
   <br />
   This repository contains NPM Packages for React Native Modal Implementation for Web
   <br />
-  <br />
-  RNW version : <b>^0.8.6</b>
 </p>
 
 ---
@@ -23,7 +21,7 @@
 
 ## Setup
 
-This libraries is available on npm, install it with: `npm install --save modal-react-native-web` or `yarn add modal-react-native-web` for the basic modal.
+Modal library is available on npm, install it with: `npm install --save modal-react-native-web` or `yarn add modal-react-native-web` for the basic modal.
 
 If you want to use the enhanced version, install it with `npm install --save modal-enhanced-react-native-web` or `yarn add modal-enhanced-react-native-web`.
 
@@ -166,19 +164,19 @@ Take a look at [react-native-animatable](https://github.com/oblador/react-native
     <th>&nbsp;</th>
     <th>
       <h3><a href="https://github.com/rayandrews/react-native-web-modal/tree/master/packages/modal-react-native-web">React Native Web Modal</a></h3>
-      <a href="https://nodei.co/npm/modal-react-native-web/"><img src="https://nodei.co/npm/modal-react-native-web.png?downloads=true&downloadRank=true&stars=true"></a>
-      <br />
     </th>
     <th>
       <h3><a href="https://github.com/rayandrews/react-native-web-modal/tree/master/packages/modal-enhanced-react-native-web">Enhanced Modal React Native Web</a></h3>
-      <a href="https://nodei.co/npm/modal-enhanced-react-native-web/"><img src="https://nodei.co/npm/modal-enhanced-react-native-web.png?downloads=true&downloadRank=true&stars=true"></a>
-      <br />
     </th>
   <tr>
   <tr>
-    <th align="right">Version</th>
-    <td align="center">0.1.0</td>
-    <td align="center">0.1.0</td>
+    <th align="right">NPM</th>
+    <td align="center">
+      <a href="https://nodei.co/npm/modal-react-native-web/"><img src="https://nodei.co/npm/modal-react-native-web.png?downloads=true&downloadRank=true&stars=true" /></a>
+    </td>
+    <td align="center">
+      <a href="https://nodei.co/npm/modal-enhanced-react-native-web/"><img src="https://nodei.co/npm/modal-enhanced-react-native-web.png?downloads=true&downloadRank=true&stars=true" /></a>
+    </td>
   </tr>
   <tr>
     <th align="right">Description</th>

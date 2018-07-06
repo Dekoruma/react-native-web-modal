@@ -10,7 +10,7 @@
   This repository contains NPM Packages for React Native Modal Implementation for Web
   <br />
   <br />
-  RNW version : <b>^0.8.6</b>
+  <a href="https://nodei.co/npm/modal-react-native-web/"><img src="https://nodei.co/npm/modal-react-native-web.png?downloads=true&downloadRank=true&stars=true" /></a>
 </p>
 
 ---
@@ -27,7 +27,7 @@ This libraries is available on npm, install it with: `npm install --save modal-r
 
 ## Usage
 
-Since r-web-modal is an implemantion of the original react native modal, it works in a similar fashion with [react-native modal](https://facebook.github.io/react-native/docs/modal.html). But of course, some APIs are limited (not all props are suppported).
+Since react native web modal is an implementation of the original react native modal, it works in similar fashions with [react-native modal](https://facebook.github.io/react-native/docs/modal.html). But of course, some APIs are limited (not all props are suppported).
 
 Here's example code:
 
@@ -94,19 +94,19 @@ _Taken from [React Native Modal Example](https://facebook.github.io/react-native
     <th>&nbsp;</th>
     <th>
       <h3><a href="https://github.com/rayandrews/react-native-web-modal/tree/master/packages/modal-react-native-web">React Native Web Modal</a></h3>
-      NPM : <a href="https://npm.im/modal-react-native-web">modal-react-native-web</a>
-      <br />
     </th>
     <th>
       <h3><a href="https://github.com/rayandrews/react-native-web-modal/tree/master/packages/modal-enhanced-react-native-web">Enhanced Modal React Native Web</a></h3>
-      NPM : <a href="https://npm.im/modal-enhanced-react-native-web">modal-enhanced-react-native-web</a>
-      <br />
     </th>
   <tr>
   <tr>
-    <th align="right">Version</th>
-    <td align="center">0.1.0</td>
-    <td align="center">0.1.0</td>
+    <th align="right">NPM</th>
+    <td align="center">
+      <a href="https://nodei.co/npm/modal-react-native-web/"><img src="https://nodei.co/npm/modal-react-native-web.png?downloads=true&downloadRank=true&stars=true" /></a>
+    </td>
+    <td align="center">
+      <a href="https://nodei.co/npm/modal-enhanced-react-native-web/"><img src="https://nodei.co/npm/modal-enhanced-react-native-web.png?downloads=true&downloadRank=true&stars=true" /></a>
+    </td>
   </tr>
   <tr>
     <th align="right">Description</th>
