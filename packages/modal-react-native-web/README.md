@@ -3,6 +3,9 @@
   React Native Web Modal
   <br>
   <br>
+  <a href="https://codesandbox.io/s/kxmx8w08jv">
+    <img alt="Edit kxmx8w08jv" src="https://codesandbox.io/static/img/play-codesandbox.svg">
+  </a>
 </h1>
 
 <p align="center">
@@ -147,7 +150,7 @@ _Taken from [React Native Modal Example](https://facebook.github.io/react-native
 ## Special Thanks
 
 * **Natan Elia** - [Natan Elia](https://github.com/natanelia)
-* **Louis David** [Louis David](https://github.com/louvidc)
+* **Louis David** - [Louis David](https://github.com/louvidc)
 
 ## License
 
