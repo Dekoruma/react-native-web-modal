@@ -1,6 +1,13 @@
 {
   "presets": [
-    "env",
+    ["env", {
+      "targets": {
+        "browsers": ["last 1 versions", "ie >= 10"]
+      },
+      "modules": false,
+      "loose": true,
+      "useBuiltIns": true
+    }],
     "stage-0",
     "react",
     "react-native"

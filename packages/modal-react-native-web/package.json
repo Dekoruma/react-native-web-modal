@@ -24,7 +24,6 @@
     "build": "yarn clean && yarn build:es5 && yarn build:commonjs",
     "build:es5": "BABEL_ENV=production babel src -d dist --ignore \"**/__tests__\"",
     "build:commonjs": "BABEL_ENV=commonjs babel src -d dist/cjs --ignore \"**/__tests__\"",
-    "build:watch": "yarn build -w",
     "clean": "rimraf dist"
   },
   "devDependencies": {
@@ -48,6 +47,6 @@
     "react-native-web": "0.7.x"
   },
   "dependencies": {
-    "react-lifecycles-compat": "^3.0.4"
+    "warning": "^4.0.1"
   }
 }
