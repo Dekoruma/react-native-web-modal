@@ -1,7 +1,16 @@
 /**
  * MIT License
- * Copyright (c) 2017 React Native Community
- * https://github.com/react-native-community/react-native-modal
+ * Copyright (c) 2017 Ryan Florence
+ * https://github.com/reactjs/react-modal/blob/master/LICENSE
+ *
+ * Take WAI-ARIA for React Native Web
+ *
+ * Modified by Ray Andrew <raydreww@gmail.com>
+ * For Modal React Native Web
+ *
+ * MIT License
+ * Copyright (c) 2018 Ray Andrew
+ * https://github.com/rayandrews/react-native-web-modal
  */
 
 import React, { Component } from 'react';
@@ -38,6 +47,8 @@ const makeAnimation = (name, obj) => {
 const isObject = (obj) => obj !== null && typeof obj === 'object';
 
 class ReactNativeModal extends Component {
+  static setAppElement = Modal.setAppElement;
+
   static propTypes = {
     animationIn: PropTypes.oneOfType([PropTypes.string, PropTypes.shape]),
     animationInTiming: PropTypes.number,
@@ -430,6 +441,7 @@ class ReactNativeModal extends Component {
       ) : (
         children
       );
+
     const containerView = (
       <View
         {...panHandlers}

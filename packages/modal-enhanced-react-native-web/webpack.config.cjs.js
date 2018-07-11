@@ -1,5 +1,3 @@
-const path = require('path');
-
 const { defaultConfig, libraryName } = require('./default-config');
 
 module.exports = {

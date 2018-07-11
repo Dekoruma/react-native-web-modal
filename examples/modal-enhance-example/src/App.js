@@ -5,6 +5,8 @@ import Modal from 'modal-enhanced-react-native-web';
 
 import styles from './styles';
 
+Modal.setAppElement('#root');
+
 export default class App extends Component {
   state = {
     visibleModal: null,

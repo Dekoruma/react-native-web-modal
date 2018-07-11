@@ -55,7 +55,9 @@
     ],
     "nohoist": [
       "**/react-native-animatable",
-      "**/react-native-animatable/**"
+      "**/react-native-animatable/**",
+      "**/react-lifecycles-compat",
+      "**/react-lifecycles-compat/**"
     ]
   },
   "lint-staged": {

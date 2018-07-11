@@ -3,6 +3,8 @@ import { Text, TouchableHighlight, View } from 'react-native';
 
 import Modal from 'modal-react-native-web';
 
+Modal.setAppElement('#root');
+
 export default class ModalExample extends Component {
   state = {
     visible: false,
