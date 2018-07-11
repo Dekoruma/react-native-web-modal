@@ -1,37 +1,15 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import {
-  Animated,
-  Dimensions,
-  Easing,
-  Platform,
-  StyleSheet,
-} from 'react-native';
+import { Animated, Dimensions, Easing, StyleSheet } from 'react-native';
 
-import ModalPortal from '../Portalv1';
+import * as ariaAppHider from './ariaAppHider';
+import { propTypes, defaultProps } from './modalPropTypes';
 
-export default class Modal extends Component {
-  static propTypes = {
-    animationType: PropTypes.oneOf(['none', 'slide', 'fade']),
-    transparent: PropTypes.bool,
-    visible: PropTypes.bool,
-    onRequestClose:
-      Platform.isTV || Platform.OS === 'android'
-        ? PropTypes.func.isRequired
-        : PropTypes.func,
-    onShow: PropTypes.func,
-    onDismiss: PropTypes.func,
-    children: PropTypes.node.isRequired,
-  };
+let ariaHiddenInstances = 0;
 
-  static defaultProps = {
-    animationType: 'none',
-    transparent: false,
-    visible: true,
-    onShow: () => {},
-    onRequestClose: () => {},
-    onDismiss: () => {},
-  };
+export default class ModalPortal extends Component {
+  static propTypes = propTypes;
+
+  static defaultProps = defaultProps;
 
   constructor(props) {
     super(props);
@@ -55,7 +33,12 @@ export default class Modal extends Component {
   }
 
   handleShow() {
-    const { animationType, onShow } = this.props;
+    const { animationType, onShow, appElement, ariaHideApp } = this.props;
+
+    if (ariaHideApp) {
+      ariaHiddenInstances += 1;
+      ariaAppHider.hide(appElement);
+    }
 
     if (animationType === 'slide') {
       this.animateSlideIn(onShow);
@@ -67,7 +50,7 @@ export default class Modal extends Component {
   }
 
   handleClose() {
-    const { animationType, onDismiss } = this.props;
+    const { animationType, onDismiss, ariaHideApp, appElement } = this.props;
 
     if (animationType === 'slide') {
       this.animateSlideOut(onDismiss);
@@ -77,7 +60,13 @@ export default class Modal extends Component {
       onDismiss();
     }
 
-    // ModalPortal.removePortals();
+    if (ariaHideApp && ariaHiddenInstances > 0) {
+      ariaHiddenInstances -= 1;
+
+      if (ariaHiddenInstances === 0) {
+        ariaAppHider.show(appElement);
+      }
+    }
   }
 
   // Fade Animation Implementation
@@ -228,13 +217,13 @@ export default class Modal extends Component {
     const animationStyle = this.getAnimationStyle();
 
     return (
-      <ModalPortal>
+      <div aria-modal="true">
         <Animated.View
           style={[style.baseStyle, transparentStyle, animationStyle]}
         >
           {children}
         </Animated.View>
-      </ModalPortal>
+      </div>
     );
   }
 }

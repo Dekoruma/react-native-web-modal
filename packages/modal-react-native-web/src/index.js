@@ -1,5 +1,5 @@
-import Portal from './Portal';
-import Modal from './Modal';
+// import { Modal, Portal } from './Portalv3';
+import { Modal, Portal } from './Portalv3';
 
 export { Portal, Modal };
 

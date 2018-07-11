@@ -21,7 +21,7 @@ import {
   registerAnimation,
   createAnimation,
 } from 'react-native-animatable';
-import Modal from 'modal-react-native-web';
+import { Modal } from 'modal-react-native-web';
 
 import * as ANIMATION_DEFINITIONS from './animations';
 
@@ -38,6 +38,8 @@ const makeAnimation = (name, obj) => {
 const isObject = (obj) => obj !== null && typeof obj === 'object';
 
 class ReactNativeModal extends Component {
+  static setAppElement = Modal.setAppElement;
+
   static propTypes = {
     animationIn: PropTypes.oneOfType([PropTypes.string, PropTypes.shape]),
     animationInTiming: PropTypes.number,

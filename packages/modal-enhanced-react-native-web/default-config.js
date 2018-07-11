@@ -40,7 +40,7 @@ module.exports = {
         commonjs: 'react',
         amd: 'react',
       },
-      ReactDOM: {
+      'react-dom': {
         root: 'ReactDOM',
         commonjs2: 'react-dom',
         commonjs: 'react-dom',
@@ -58,6 +58,10 @@ module.exports = {
         commonjs: 'react-native-web',
         amd: 'react-native-web',
       },
-    }
-  }
+    },
+    // optimization: {
+    //   // We no not want to minimize our code.
+    //   minimize: false,
+    // },
+  },
 };

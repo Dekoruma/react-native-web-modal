@@ -9,7 +9,7 @@
     ["babel-plugin-transform-class-properties", {
       "loose": true
     }],
-    ["transform-object-rest-spread", {
+    "babel-plugin-transform-decorators-legacy", ["transform-object-rest-spread", {
       "useBuiltIns": true
     }],
     ["transform-react-remove-prop-types", {
