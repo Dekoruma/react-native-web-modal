@@ -1,6 +1,6 @@
 {
   "name": "modal-react-native-web",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "description": "React native modal implementation for web",
   "main": "dist/cjs/index.js",
   "module": "dist/index.js",
