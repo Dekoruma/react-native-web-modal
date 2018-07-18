@@ -27,6 +27,9 @@ export default class ModalExample extends Component {
           onDismiss={() => {
             alert('Modal has been closed.');
           }}
+          onRequestClose={() => {
+            this.setModalVisible(!this.state.visible);
+          }}
         >
           <View style={{ marginTop: 22 }}>
             <View>
@@ -34,7 +37,7 @@ export default class ModalExample extends Component {
 
               <TouchableHighlight
                 onPress={() => {
-                  this.setModalVisible(!this.state.visible);
+                  this.setModalVisible(false);
                 }}
               >
                 <Text>Hide Modal</Text>

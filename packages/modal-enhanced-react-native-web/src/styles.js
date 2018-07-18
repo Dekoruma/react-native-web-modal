@@ -14,7 +14,7 @@ export default StyleSheet.create({
     left: 0,
     right: 0,
     opacity: 0,
-    backgroundColor: 'black',
+    backgroundColor: '#000000',
   },
   content: {
     flex: 1,
