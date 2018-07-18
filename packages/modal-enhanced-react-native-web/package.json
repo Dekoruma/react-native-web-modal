@@ -1,6 +1,6 @@
 {
   "name": "modal-enhanced-react-native-web",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "React native modal enhanced for web",
   "main": "dist/cjs/index.js",
   "module": "dist/index.js",
