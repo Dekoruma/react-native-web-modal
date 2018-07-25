@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Animated,
-  Dimensions,
-  Easing,
-  Platform,
-  StyleSheet,
-} from 'react-native';
+import { Animated, Dimensions, Easing, Platform } from 'react-native';
 
 import ModalPortal from './Portal';
 import * as ariaAppHider from './ariaAppHider';
