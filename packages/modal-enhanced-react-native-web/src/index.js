@@ -60,7 +60,7 @@ class ReactNativeModal extends Component {
     backdropTransitionInTiming: PropTypes.number,
     backdropTransitionOutTiming: PropTypes.number,
     children: PropTypes.node.isRequired,
-    isVisible: PropTypes.bool.isRequired,
+    isVisible: PropTypes.bool,
     hideModalContentWhileAnimating: PropTypes.bool,
     onModalShow: PropTypes.func,
     onModalHide: PropTypes.func,
@@ -158,20 +158,18 @@ class ReactNativeModal extends Component {
     if (this.state.isVisible) {
       this.open();
     }
-    // window.addEventListener(
-    //   'resize',
-    //   this.handleDimensionsUpdate
-    // );
+    // window.addEventListener('resize', () => {
+    //   this.handleDimensionsUpdate();
+    // });
   }
 
   componentWillUnmount() {
-    // window.removeEventListener(
-    //   'resize',
-    //   this.handleDimensionsUpdate
-    // );
+    // window.removeEventListener('resize', () => {
+    //   this.handleDimensionsUpdate();
+    // });
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     // On modal open request, we slide the view up and fade in the backdrop
     if (this.props.isVisible && !prevProps.isVisible) {
       this.open();
@@ -323,6 +321,7 @@ class ReactNativeModal extends Component {
   open = () => {
     if (this.transitionLock) return;
     this.transitionLock = true;
+
     if (this.backdropRef) {
       this.backdropRef.transitionTo(
         { opacity: this.props.backdropOpacity },
@@ -418,7 +417,7 @@ class ReactNativeModal extends Component {
       style,
       ...otherProps
     } = this.props;
-    const { deviceWidth, deviceHeight } = this.state;
+    const { deviceWidth } = this.state;
 
     const computedStyle = [
       { margin: deviceWidth * 0.05, transform: [{ translateY: 0 }] },
@@ -445,7 +444,9 @@ class ReactNativeModal extends Component {
     const containerView = (
       <View
         {...panHandlers}
-        ref={(ref) => (this.contentRef = ref)}
+        ref={(ref) => {
+          this.contentRef = ref;
+        }}
         style={[panPosition, computedStyle]}
         pointerEvents="box-none"
         useNativeDriver={useNativeDriver}
@@ -465,7 +466,9 @@ class ReactNativeModal extends Component {
       >
         <TouchableWithoutFeedback onPress={onBackdropPress}>
           <View
-            ref={(ref) => (this.backdropRef = ref)}
+            ref={(ref) => {
+              this.backdropRef = ref;
+            }}
             useNativeDriver={useNativeDriver}
             style={[
               styles.backdrop,
@@ -473,8 +476,6 @@ class ReactNativeModal extends Component {
                 backgroundColor: this.state.showContent
                   ? backdropColor
                   : 'transparent',
-                width: deviceWidth,
-                height: deviceHeight,
               },
             ]}
           />
