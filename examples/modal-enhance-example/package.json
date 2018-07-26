@@ -1,9 +1,9 @@
 {
   "name": "modal-enhance-example",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": true,
   "dependencies": {
-    "modal-enhanced-react-native-web": "^0.1.7",
+    "modal-enhanced-react-native-web": "^0.1.8",
     "react": "^16.4.1",
     "react-art": "^16.4.1",
     "react-dom": "^16.4.1",
