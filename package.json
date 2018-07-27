@@ -1,9 +1,9 @@
 {
   "version": "0.0.2-0",
   "description": "React native modal for web",
-  "repository": "https://github.com/rayandrews/react-native-web-modal",
-  "homepage": "https://github.com/rayandrews/react-native-web-modal#readme",
-  "bugs": "https://github.com/rayandrews/react-native-web-modal/issues",
+  "repository": "https://github.com/Dekoruma/react-native-web-modal",
+  "homepage": "https://github.com/Dekoruma/react-native-web-modal#readme",
+  "bugs": "https://github.com/Dekoruma/react-native-web-modal/issues",
   "author": "Ray Andrew <raydreww@gmail.com>",
   "license": "MIT",
   "private": true,
