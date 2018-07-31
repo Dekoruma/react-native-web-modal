@@ -2,8 +2,7 @@
   "name": "modal-react-native-web",
   "version": "0.1.7",
   "description": "React native modal implementation for web",
-  "main": "dist/cjs/index.js",
-  "module": "dist/index.js",
+  "main": "dist/index.js",
   "repository": "https://github.com/Dekoruma/react-native-web-modal/packages/modal-react-native-web",
   "author": "Ray Andrew <raydreww@gmail.com>",
   "license": "MIT",
@@ -21,9 +20,9 @@
     "react-native-animatable"
   ],
   "scripts": {
-    "build": "yarn clean && yarn build:es5 && yarn build:commonjs",
+    "build": "yarn clean && yarn build:commonjs",
     "build:es5": "BABEL_ENV=production babel src -d dist --ignore \"**/__tests__\"",
-    "build:commonjs": "BABEL_ENV=commonjs babel src -d dist/cjs --ignore \"**/__tests__\"",
+    "build:commonjs": "BABEL_ENV=commonjs babel src -d dist --ignore \"**/__tests__\"",
     "clean": "rimraf dist"
   },
   "devDependencies": {
