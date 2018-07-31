@@ -1,6 +1,6 @@
 {
   "name": "modal-enhanced-react-native-web",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "React native modal enhanced for web",
   "main": "dist/index.js",
   "repository": "https://github.com/rayandrews/react-native-web-modal/packages/modal-enhanced-react-native-web",
@@ -37,7 +37,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-native": "^4.0.0",
     "babel-preset-stage-0": "^6.24.1",
-    "modal-react-native-web": "^0.1.7",
+    "modal-react-native-web": "^0.1.9",
     "prop-types": "^15.6.2",
     "react-native-animatable": "^1.3.0",
     "rimraf": "^2.6.2",
