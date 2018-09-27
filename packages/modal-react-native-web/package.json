@@ -3,7 +3,7 @@
   "version": "0.1.9",
   "description": "React native modal implementation for web",
   "main": "dist/index.js",
-  "repository": "https://github.com/Dekoruma/react-native-web-modal/packages/modal-react-native-web",
+  "repository": "https://github.com/Dekoruma/react-native-web-modal/tree/master/packages/modal-react-native-web",
   "author": "Ray Andrew <raydreww@gmail.com>",
   "license": "MIT",
   "private": false,
