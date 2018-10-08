@@ -318,16 +318,33 @@ class ReactNativeModal extends Component {
     }
   };
 
+  handleBackdropRef = (ref) => {
+    this.backdropRef = ref;
+    if (this.state.isVisible) {
+      this.open();
+    }
+  };
+
+  handleContentRef = (ref) => {
+    this.contentRef = ref;
+    if (this.state.isVisible) {
+      this.open();
+    }
+  };
+
   open = () => {
     if (this.transitionLock) return;
+    // For some reason the backdropRef and contentRef do not initialize before
+    // componentDidMount is called so make sure not to try opening until the
+    // refs are mounted
+    // https://github.com/Dekoruma/react-native-web-modal/issues/5
+    if (!(this.backdropRef && this.contentRef)) return;
     this.transitionLock = true;
 
-    if (this.backdropRef) {
-      this.backdropRef.transitionTo(
-        { opacity: this.props.backdropOpacity },
-        this.props.backdropTransitionInTiming
-      );
-    }
+    this.backdropRef.transitionTo(
+      { opacity: this.props.backdropOpacity },
+      this.props.backdropTransitionInTiming
+    );
 
     // This is for reset the pan position, if not modal get stuck
     // at the last release position when you try to open it.
@@ -336,18 +353,14 @@ class ReactNativeModal extends Component {
       this.state.pan.setValue({ x: 0, y: 0 });
     }
 
-    if (this.contentRef) {
-      this.contentRef[this.animationIn](this.props.animationInTiming).then(
-        () => {
-          this.transitionLock = false;
-          if (!this.props.isVisible) {
-            this._close();
-          } else {
-            this.props.onModalShow();
-          }
-        }
-      );
-    }
+    this.contentRef[this.animationIn](this.props.animationInTiming).then(() => {
+      this.transitionLock = false;
+      if (!this.props.isVisible) {
+        this._close();
+      } else {
+        this.props.onModalShow();
+      }
+    });
   };
 
   _close = () => {
@@ -444,9 +457,7 @@ class ReactNativeModal extends Component {
     const containerView = (
       <View
         {...panHandlers}
-        ref={(ref) => {
-          this.contentRef = ref;
-        }}
+        ref={this.handleContentRef}
         style={[panPosition, computedStyle]}
         pointerEvents="box-none"
         useNativeDriver={useNativeDriver}
@@ -466,9 +477,7 @@ class ReactNativeModal extends Component {
       >
         <TouchableWithoutFeedback onPress={onBackdropPress}>
           <View
-            ref={(ref) => {
-              this.backdropRef = ref;
-            }}
+            ref={this.handleBackdropRef}
             useNativeDriver={useNativeDriver}
             style={[
               styles.backdrop,
