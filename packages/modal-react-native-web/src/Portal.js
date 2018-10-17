@@ -22,7 +22,7 @@ export default class Portal extends Component {
   }
 
   componentWillUnmount() {
-    this.state.target.removeChild(this.state.el);
+    this.state.target && this.state.target.removeChild(this.state.el);
   }
 
   render() {
