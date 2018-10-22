@@ -1,6 +1,6 @@
 {
   "name": "modal-react-native-web",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "description": "React native modal implementation for web",
   "main": "dist/index.js",
   "repository": "https://github.com/Dekoruma/react-native-web-modal/tree/master/packages/modal-react-native-web",

@@ -1,9 +1,9 @@
 {
   "name": "modal-example",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "modal-react-native-web": "^0.1.9",
+    "modal-react-native-web": "^0.2.0",
     "react": "^16.5.2",
     "react-art": "^16.5.2",
     "react-dom": "^16.5.2",
