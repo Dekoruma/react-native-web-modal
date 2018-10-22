@@ -21,32 +21,32 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
-    "react": "^16.4.1",
-    "react-art": "^16.4.1",
-    "react-native-web": "^0.8.6"
+    "react": "^16.5.2",
+    "react-art": "^16.5.2",
+    "react-native-web": "^0.9.3"
   },
   "devDependencies": {
-    "lerna": "^2.11.0",
-    "eslint": "^5.0.1",
-    "husky": "^0.14.3",
-    "jest": "^23.3.0",
-    "lint-staged": "^7.2.0",
-    "prettier": "^1.13.7",
-    "rimraf": "^2.6.2",
-    "concurrently": "^3.5.1",
+    "babel-eslint": "^9.0.0",
+    "concurrently": "^4.0.1",
+    "eslint": "^5.6.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-airbnb-base": "^13.0.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-config-react-app": "^2.1.0",
-    "eslint-plugin-flowtype": "^2.49.3",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-config-react-app": "^3.0.4",
+    "eslint-plugin-flowtype": "^3.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-prettier": "^2.6.1",
+    "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.10.0",
-    "onchange": "^4.0.0",
+    "husky": "^1.1.2",
+    "jest": "^23.3.0",
+    "lerna": "^3.4.3",
+    "lint-staged": "^7.2.0",
+    "onchange": "^5.0.2",
+    "prettier": "^1.13.7",
     "prettier-eslint": "^8.8.2",
     "prettier-eslint-cli": "^4.7.1",
-    "babel-eslint": "^8.2.5"
+    "rimraf": "^2.6.2"
   },
   "workspaces": {
     "packages": [

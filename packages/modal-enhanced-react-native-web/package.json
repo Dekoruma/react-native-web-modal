@@ -28,7 +28,7 @@
   ],
   "devDependencies": {
     "babel-loader": "^7.1.5",
-    "babel-plugin-add-module-exports": "next",
+    "babel-plugin-add-module-exports": "1.0.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -48,6 +48,6 @@
     "react": "16.x.x",
     "react-art": "16.x.x",
     "react-dom": "16.x.x",
-    "react-native-web": "0.7.x"
+    "react-native-web": "0.9.x"
   }
 }
