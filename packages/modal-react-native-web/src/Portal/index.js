@@ -23,11 +23,13 @@ export default class Portal extends Component {
   }
 
   componentDidMount() {
-    this.target.appendChild(this.el);
+    const target = this.target;
+    if (target) target.appendChild(this.el);
   }
 
   componentWillUnmount() {
-    this.target.removeChild(this.el);
+    const target = this.target;
+    if (target) target.removeChild(this.el);
   }
 
   get target() {
