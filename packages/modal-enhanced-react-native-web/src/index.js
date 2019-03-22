@@ -97,6 +97,7 @@ class ReactNativeModal extends Component {
     scrollTo: null,
     scrollOffset: 0,
     scrollOffsetMax: 0,
+    backdropStyle: {},
   };
 
   // We use an internal state for keeping track of the modal visibility: this allows us to keep
@@ -287,8 +288,8 @@ class ReactNativeModal extends Component {
 
   // User can define custom react-native-animatable animations, see PR #72
   buildAnimations = (props) => {
-    let animationIn = props.animationIn;
-    let animationOut = props.animationOut;
+    let { animationIn } = props;
+    let { animationOut } = props;
 
     if (isObject(animationIn)) {
       const animationName = JSON.stringify(animationIn);
@@ -373,7 +374,7 @@ class ReactNativeModal extends Component {
       );
     }
 
-    let animationOut = this.animationOut;
+    let { animationOut } = this;
 
     if (this.inSwipeClosingState) {
       this.inSwipeClosingState = false;
@@ -486,6 +487,7 @@ class ReactNativeModal extends Component {
                   ? backdropColor
                   : 'transparent',
               },
+              this.props.backdropStyle,
             ]}
           />
         </TouchableWithoutFeedback>

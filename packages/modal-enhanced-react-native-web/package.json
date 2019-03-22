@@ -49,5 +49,8 @@
     "react-art": "16.x.x",
     "react-dom": "16.x.x",
     "react-native-web": "0.9.x"
+  },
+  "dependencies": {
+    "modal-react-native-web": "^0.2.0"
   }
 }
