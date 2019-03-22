@@ -467,7 +467,6 @@ class ReactNativeModal extends Component {
         {_children}
       </View>
     );
-
     return (
       <Modal
         transparent
@@ -482,12 +481,12 @@ class ReactNativeModal extends Component {
             useNativeDriver={useNativeDriver}
             style={[
               styles.backdrop,
+              this.props.backdropStyle,
               {
                 backgroundColor: this.state.showContent
                   ? backdropColor
                   : 'transparent',
               },
-              this.props.backdropStyle,
             ]}
           />
         </TouchableWithoutFeedback>
