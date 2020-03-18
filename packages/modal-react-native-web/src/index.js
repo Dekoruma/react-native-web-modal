@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, Dimensions, Easing, Platform } from 'react-native';
+import { Animated, Dimensions, Easing, Platform, ViewPropTypes } from 'react-native';
 
 import ModalPortal from './Portal';
 import * as ariaAppHider from './ariaAppHider';
@@ -27,6 +27,7 @@ export default class Modal extends Component {
     children: PropTypes.node.isRequired,
     ariaHideApp: PropTypes.bool,
     appElement: PropTypes.instanceOf(SafeHTMLElement),
+    style: ViewPropTypes.style
   };
 
   static defaultProps = {
@@ -238,7 +239,7 @@ export default class Modal extends Component {
   }
 
   render() {
-    const { transparent, children } = this.props;
+    const { transparent, children, style } = this.props;
 
     const transparentStyle = transparent
       ? styles.bgTransparent
@@ -249,7 +250,7 @@ export default class Modal extends Component {
       <ModalPortal>
         <Animated.View
           aria-modal="true"
-          style={[styles.baseStyle, transparentStyle, animationStyle]}
+          style={[styles.baseStyle, transparentStyle, animationStyle, style]}
         >
           {children}
         </Animated.View>
