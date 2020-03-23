@@ -133,7 +133,7 @@ class ReactNativeModal extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (!this.state.isVisible && nextProps.isVisible) {
       this.setState({ isVisible: true, showContent: true });
     }
