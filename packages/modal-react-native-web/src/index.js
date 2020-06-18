@@ -7,6 +7,7 @@ import * as ariaAppHider from './ariaAppHider';
 import { SafeHTMLElement } from './utils';
 import styles from './styles';
 
+const noop = () => {};
 let ariaHiddenInstances = 0;
 
 export default class Modal extends Component {
@@ -62,7 +63,7 @@ export default class Modal extends Component {
   }
 
   handleShow() {
-    const { animationType, onShow, ariaHideApp, appElement } = this.props;
+    const { animationType, onShow = noop, ariaHideApp, appElement } = this.props;
 
     if (ariaHideApp) {
       ariaHiddenInstances += 1;
@@ -79,7 +80,7 @@ export default class Modal extends Component {
   }
 
   handleClose() {
-    const { animationType, onDismiss, ariaHideApp, appElement } = this.props;
+    const { animationType, onDismiss = noop, ariaHideApp, appElement } = this.props;
 
     if (animationType === 'slide') {
       this.animateSlideOut(onDismiss);
