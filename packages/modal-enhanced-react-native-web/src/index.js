@@ -320,9 +320,9 @@ class ReactNativeModal extends Component {
 
   handleBackdropRef = (ref) => {
     this.backdropRef = ref;
-    if (this.state.isVisible) {
-      this.open();
-    }
+    // if (this.state.isVisible) {
+    //  this.open();
+    // }
   };
 
   handleContentRef = (ref) => {
