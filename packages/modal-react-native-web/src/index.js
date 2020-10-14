@@ -56,7 +56,7 @@ export default class Modal extends Component {
     if (this.props.visible) this.handleShow();
   }
 
-  componentWillReceiveProps({ visible }) {
+  UNSAFE_componentWillReceiveProps({ visible }) {
     if (visible && !this.props.visible) this.handleShow();
     if (!visible && this.props.visible) this.handleClose();
   }
