@@ -16,6 +16,14 @@
 
 ---
 
+## Announcement
+
+Modal is now supported in react native web.
+
+https://github.com/necolas/react-native-web/releases/tag/0.14.0
+
+Thank you for using and supporting this library!
+
 ## Inspiration
 
 [React Native Modal](https://facebook.github.io/react-native/docs/modal.html) is not yet implemented in [React Native Web](https://github.com/necolas/react-native-web). This is just replacement of React Native Modal with the same API, behavior, and design. If you want to create a more enhanced modal, use React Native Web Modal Enhanced with the same code as [React Native Modal](https://github.com/react-native-community/react-native-modal) implementation by React Native Community.
