@@ -137,21 +137,6 @@ class ReactNativeModal extends Component {
     if (!this.state.isVisible && nextProps.isVisible) {
       this.setState({ isVisible: true, showContent: true });
     }
-    if (
-      this.props.animationIn !== nextProps.animationIn ||
-      this.props.animationOut !== nextProps.animationOut
-    ) {
-      this.buildAnimations(nextProps);
-    }
-    if (
-      this.props.backdropOpacity !== nextProps.backdropOpacity &&
-      this.backdropRef
-    ) {
-      this.backdropRef.transitionTo(
-        { opacity: nextProps.backdropOpacity },
-        this.props.backdropTransitionInTiming
-      );
-    }
   }
 
   componentDidMount() {
@@ -170,6 +155,24 @@ class ReactNativeModal extends Component {
   }
 
   componentDidUpdate(prevProps) {
+    // If the animations have been changed then rebuild them to make sure we're
+    // using the most up-to-date ones
+    if (
+      this.props.animationIn !== prevProps.animationIn ||
+      this.props.animationOut !== prevProps.animationOut
+    ) {
+      this.buildAnimations(this.props);
+    }
+    // If backdrop opacity has been changed then make sure to update it
+    if (
+      this.props.backdropOpacity !== prevProps.backdropOpacity &&
+      this.backdropRef
+    ) {
+      this.backdropRef.transitionTo(
+        { opacity: this.props.backdropOpacity },
+        this.props.backdropTransitionInTiming
+      );
+    }
     // On modal open request, we slide the view up and fade in the backdrop
     if (this.props.isVisible && !prevProps.isVisible) {
       this.open();
@@ -287,8 +290,8 @@ class ReactNativeModal extends Component {
 
   // User can define custom react-native-animatable animations, see PR #72
   buildAnimations = (props) => {
-    let animationIn = props.animationIn;
-    let animationOut = props.animationOut;
+    let { animationIn } = props;
+    let { animationOut } = props;
 
     if (isObject(animationIn)) {
       const animationName = JSON.stringify(animationIn);
@@ -352,15 +355,16 @@ class ReactNativeModal extends Component {
     if (this.state.isSwipeable) {
       this.state.pan.setValue({ x: 0, y: 0 });
     }
-
-    this.contentRef[this.animationIn](this.props.animationInTiming).then(() => {
-      this.transitionLock = false;
-      if (!this.props.isVisible) {
-        this._close();
-      } else {
-        this.props.onModalShow();
-      }
-    });
+    this.contentRef
+      .animate(this.animationIn, this.props.animationInTiming)
+      .then(() => {
+        this.transitionLock = false;
+        if (!this.props.isVisible) {
+          this._close();
+        } else {
+          this.props.onModalShow();
+        }
+      });
   };
 
   _close = () => {
@@ -373,7 +377,7 @@ class ReactNativeModal extends Component {
       );
     }
 
-    let animationOut = this.animationOut;
+    let { animationOut } = this;
 
     if (this.inSwipeClosingState) {
       this.inSwipeClosingState = false;
@@ -389,24 +393,26 @@ class ReactNativeModal extends Component {
     }
 
     if (this.contentRef) {
-      this.contentRef[animationOut](this.props.animationOutTiming).then(() => {
-        this.transitionLock = false;
-        if (this.props.isVisible) {
-          this.open();
-        } else {
-          this.setState(
-            {
-              showContent: false,
-            },
-            () => {
-              this.setState({
-                isVisible: false,
-              });
-            }
-          );
-          this.props.onModalHide();
-        }
-      });
+      this.contentRef
+        .animate(animationOut, this.props.animationOutTiming)
+        .then(() => {
+          this.transitionLock = false;
+          if (this.props.isVisible) {
+            this.open();
+          } else {
+            this.setState(
+              {
+                showContent: false,
+              },
+              () => {
+                this.setState({
+                  isVisible: false,
+                });
+              }
+            );
+            this.props.onModalHide();
+          }
+        });
     }
   };
 

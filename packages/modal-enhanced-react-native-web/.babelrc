@@ -19,9 +19,7 @@
     ["transform-object-rest-spread", {
       "useBuiltIns": true
     }],
-    ["transform-react-remove-prop-types", {
-      "mode": "wrap"
-    }],
+    ["transform-react-remove-prop-types", {}],
     ["module-resolver", {
       "alias": {
         "react-native": ["react-native-web"]
