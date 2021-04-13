@@ -1,32 +1,48 @@
 {
   "presets": [
-    ["env", {
-      "targets": {
-        "browsers": ["last 1 versions", "ie >= 10"]
-      },
-      "modules": false,
-      "loose": true,
-      "useBuiltIns": true
-    }],
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": ["last 1 versions", "ie >= 10"]
+        },
+        "modules": false,
+        "loose": true,
+        "useBuiltIns": true
+      }
+    ],
     "stage-0",
     "react",
     "react-native"
   ],
   "plugins": [
-    ["babel-plugin-transform-class-properties", {
-      "loose": true
-    }],
-    ["transform-object-rest-spread", {
-      "useBuiltIns": true
-    }],
-    ["transform-react-remove-prop-types", {
-      "mode": "wrap"
-    }],
-    ["module-resolver", {
-      "alias": {
-        "react-native": ["react-native-web"]
+    [
+      "babel-plugin-transform-class-properties",
+      {
+        "loose": true
       }
-    }]
+    ],
+    [
+      "transform-object-rest-spread",
+      {
+        "useBuiltIns": true
+      }
+    ],
+    [
+      "transform-react-remove-prop-types",
+      {
+        "mode": "remove"
+        // had to change this to remove to avoid build errors
+      }
+    ],
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "react-native": ["react-native-web"]
+        }
+      }
+    ]
   ],
   "env": {
     "commonjs": {
