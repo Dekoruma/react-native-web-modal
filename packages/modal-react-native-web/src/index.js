@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, Dimensions, Easing, Platform } from 'react-native';
+import { View, Animated, Dimensions, Easing, Platform } from 'react-native';
 
 import ModalPortal from './Portal';
 import * as ariaAppHider from './ariaAppHider';
@@ -27,6 +27,7 @@ export default class Modal extends Component {
     children: PropTypes.node.isRequired,
     ariaHideApp: PropTypes.bool,
     appElement: PropTypes.instanceOf(SafeHTMLElement),
+    coverScreen: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -38,6 +39,7 @@ export default class Modal extends Component {
     onDismiss: () => {},
     ariaHideApp: true,
     appElement: null,
+    coverScreen: true,
   };
 
   constructor(props) {
@@ -245,7 +247,7 @@ export default class Modal extends Component {
       : styles.bgNotTransparent;
     const animationStyle = this.getAnimationStyle();
 
-    return (
+    return this.props.coverScreen ? (
       <ModalPortal>
         <Animated.View
           aria-modal="true"
@@ -254,6 +256,15 @@ export default class Modal extends Component {
           {children}
         </Animated.View>
       </ModalPortal>
+    ) : (
+      <View>
+        <Animated.View
+          aria-modal="true"
+          style={[styles.baseStyle, transparentStyle, animationStyle]}
+        >
+          {children}
+        </Animated.View>
+      </View>
     );
   }
 }

@@ -287,8 +287,8 @@ class ReactNativeModal extends Component {
 
   // User can define custom react-native-animatable animations, see PR #72
   buildAnimations = (props) => {
-    let animationIn = props.animationIn;
-    let animationOut = props.animationOut;
+    let { animationIn } = props;
+    let { animationOut } = props;
 
     if (isObject(animationIn)) {
       const animationName = JSON.stringify(animationIn);
@@ -373,7 +373,7 @@ class ReactNativeModal extends Component {
       );
     }
 
-    let animationOut = this.animationOut;
+    let { animationOut } = this;
 
     if (this.inSwipeClosingState) {
       this.inSwipeClosingState = false;
