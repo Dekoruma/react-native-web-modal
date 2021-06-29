@@ -23,7 +23,7 @@
   "dependencies": {
     "react": "^16.5.2",
     "react-art": "^16.5.2",
-    "react-native-web": "^0.9.3"
+    "react-native-web": "~0.13.12"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",
